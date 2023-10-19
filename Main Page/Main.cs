@@ -11,5 +11,3 @@ public class Programm
         }
     }
 }
-
-// TODO - Generell Fragen zufällig ausgeben

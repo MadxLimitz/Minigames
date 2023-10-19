@@ -6,13 +6,15 @@ public class Choose_Theme
 {
     public void ChooseTheme()
     {
+        Questions_History questions_History = new Questions_History();
         Dividingline dividingline = new Dividingline();
 
         dividingline.Border();
+        // TODO - Liste erstellen ↓↓↓
         Console.WriteLine("Thema wählen:\n");
-        Console.WriteLine("1. Österreich");
-        Console.WriteLine("2. Geografie");
-        Console.WriteLine("3. Geschichte\n");
+        Console.WriteLine("1. Geschichte");
+        Console.WriteLine("2. <none>");
+        Console.WriteLine("3. <none>\n");
         dividingline.Border();
 
         int userInput = Convert.ToInt32(Console.ReadLine());
@@ -21,17 +23,17 @@ public class Choose_Theme
         {
             case 1:
                 Console.Clear();
-                Questions_Austria.QuestionsAustria();
+                questions_History.QuestionsHistory();
                 break;
 
             case 2:
                 Console.Clear();
-                Questions_Geographie.QuestionsGeographie();
+                // Fragen einfügen
                 break;
 
             case 3:
                 Console.Clear();
-                Questions_History.QuestionsHistory();
+                // Fragen einfügen
                 break;
         }
     }
