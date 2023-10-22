@@ -1,7 +1,6 @@
-﻿using MainPage;
-using System.Runtime.CompilerServices;
+﻿namespace MultiplechoiseQuiz;
 
-namespace MultiplechoiseQuiz;
+using MainPage;
 
 public class Play_Query
 {

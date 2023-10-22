@@ -1,5 +1,4 @@
 ﻿namespace MainPage;
-using MultiplechoiseQuiz;
 public class Main_Page
 {
     public void MainPage()
