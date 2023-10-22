@@ -8,6 +8,7 @@ public class Main_Page
         Description_Of_Games get_description_of_games = new Description_Of_Games();
         Dividingline dividingline = new Dividingline();
 
+        // Konsolen Ausgabe Anfang
         dividingline.Border();
 
         Console.ForegroundColor = ConsoleColor.Blue;
@@ -23,6 +24,7 @@ public class Main_Page
         Console.ResetColor();
 
         dividingline.Border();
+        // Konsolen Ausgabe Ende
 
         string? userInput = Console.ReadLine();
         Console.Clear();

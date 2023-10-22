@@ -9,12 +9,22 @@ public class Game_List
         Multiplechoise_Quiz multiplechoise_Quiz = new Multiplechoise_Quiz();
         Dividingline dividingline = new Dividingline();
 
+        List<string> GameList = new List<string>();
+
+        GameList.Add("1. Multiplechoise Quiz\n");
+        GameList.Add("2. In Arbeit...\n");
+
+
+        // Konsolen Ausgabe Anfang
         dividingline.Border();
 
-        Console.WriteLine("1. Multiplechoise Quiz\n");
-        Console.WriteLine("2. In Arbeit...\n");
+        foreach (string game in GameList)
+        {
+            Console.WriteLine(game);
+        }
 
         dividingline.Border();
+        // Konsolen Ausgabe Anfang
 
         string? userInput = Console.ReadLine();
 
@@ -25,7 +35,14 @@ public class Game_List
                 break;
 
             case "2":
-                Console.WriteLine("In Arbeit\n");
+                Console.Clear();
+                dividingline.Border();
+
+                Console.WriteLine("Weitere spiele sind in Arbeit...\n");
+
+                dividingline.Border();
+                Thread.Sleep(1500);
+                Console.Clear();
                 break;
         }
     }

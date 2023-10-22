@@ -23,7 +23,7 @@ public class Multiplechoise_Quiz
             Console.Clear();
 
             dividingline.Border();
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Hauptseite wird geladen...\n");
             Console.ResetColor();
             dividingline.Border();

@@ -1,9 +1,14 @@
-﻿namespace MultiplechoiseQuiz;
+﻿using MainPage;
+
+namespace MultiplechoiseQuiz;
 
 public class Questions_History
 {
     public void QuestionsHistory()
     {
+        Error_Message error_Message = new Error_Message();
+        Dividingline dividingline = new Dividingline();
+
         List<IQuestion> questions = new List<IQuestion>
         {
             new Class_QuestionsHistory("Wann begann der Zweite Weltkrieg?\n",
@@ -18,10 +23,10 @@ public class Questions_History
             new Class_QuestionsHistory("Welche Länder bildeten die Alliierten im Zweiten Weltkrieg?\n",
                 new List<string>{ "1. Deutschland, Japan, Italien", "2. USA, Großbritannien, Sowjetunion", "3. Deutschland, Frankreich, Italien", "4. Japan, Sowjetunion, China\n"}, "2"),
 
-            new Class_QuestionsHistory("Wann endete der Zweite Weltkrieg in Europa\n?",
+            new Class_QuestionsHistory("Wann endete der Zweite Weltkrieg in Europa?\n",
                 new List<string>{"1. 1943", "2. 1945", "3. 1947", "4. 1950"}, "2"),
 
-            new Class_QuestionsHistory("Was war die Operation Overlord\n?",
+            new Class_QuestionsHistory("Was war die Operation Overlord?\n",
                 new List<string>{ "1. Die Landung der Alliierten in der Normandie", "2. Die Bombardierung von London", "3. Die Schlacht um Stalingrad", "4. Der Angriff auf Pearl Harbor\n"}, "1"),
 
             new Class_QuestionsHistory("Welche Stadt war das Ziel der ersten Atombombe im Zweiten Weltkrieg?\n",
@@ -37,13 +42,14 @@ public class Questions_History
                 new List<string>{ "1. Yalta-Konferenz", "2. Teheran-Konferenz", "3. Jalta-Konferenz", "4. Potsdamer Konferenz"}, "4"),
         };
 
-        // TODO - Jede frage einzeln ausgeben mit den Bordern antwort möglichkeit abfangen und dann die nächste frage generieren (wie bei den alten fragen)
         Random randomGenerator = new Random();
 
         questions = questions.OrderBy(frage => randomGenerator.Next()).ToList();
-
+        
+        // Eine zufällige Frage ausgeben
         foreach (var question in questions)
         {
+            dividingline.Border();
             Console.WriteLine(question.Question);
 
             foreach (var option in question.AwnserOptions)
@@ -52,6 +58,38 @@ public class Questions_History
             }
 
             Console.WriteLine();
+            dividingline.Border();
+            Console.WriteLine();
+
+            // Schauen ob die Frage richtig ist
+            string? userAnswer = Console.ReadLine();
+            Console.WriteLine();
+
+            if (userAnswer != null)
+            {
+                userAnswer = userAnswer.Trim().ToLower();
+
+                if (userAnswer == question.CorrectAwnser)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Deine Antwort ist Richtig, mach weiter so!\n");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.ForegroundColor= ConsoleColor.Yellow;
+                    Console.WriteLine("Deine Antwort ist leider Falsch!\n");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                }
+            }
+            else
+            {
+                error_Message.ErrorMessage();
+            }
         }
     }
 }

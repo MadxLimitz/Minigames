@@ -4,33 +4,39 @@ public class Navbar
 {
     public void Navigation()
     {
+        Loading_Main_Page_Message main_Page_Message = new Loading_Main_Page_Message();
+        Dividingline dividingline = new Dividingline();
         Error_Message error_Message = new Error_Message();
 
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("Um in das Hauptmenü zu kommen drücken Sie \"M\"");
-        Console.ResetColor();
-
-        string? userInput = Console.ReadLine();
-
-        if (userInput != null)
+        while (true)
         {
-            userInput = userInput.ToLower();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Um in das Hauptmenü zu kommen drücken Sie \"M\"");
+            Console.ResetColor();
 
-            if (userInput == "m")
+            string? userInput = Console.ReadLine();
+
+            if (userInput != null)
             {
-                Main_Page main_page = new Main_Page();
+                userInput = userInput.ToLower();
 
-                Console.Clear();
-                main_page.MainPage();
+                if (userInput == "m")
+                {
+                    Console.Clear();
+                    main_Page_Message.LoadingMainPageMessage();
+                    break;
+                }
+
+                if (userInput != "m")
+                {
+                    error_Message.ErrorMessage();
+                    Thread.Sleep(1500);
+                }
             }
             else
             {
                 error_Message.ErrorMessage();
             }
-        }
-        else
-        {
-            error_Message.ErrorMessage();
         }
     }
 }

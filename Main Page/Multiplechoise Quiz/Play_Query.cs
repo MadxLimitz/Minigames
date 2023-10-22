@@ -6,6 +6,7 @@ public class Play_Query
 {
     public static bool PlayQuery()
     {
+        Loading_Main_Page_Message main_Page_Message = new Loading_Main_Page_Message();
         Main_Page main_Page = new Main_Page();
         Error_Message error_Message = new Error_Message();
         Dividingline dividingline = new Dividingline();
@@ -36,6 +37,8 @@ public class Play_Query
 
                 dividingline.Border();
                 Thread.Sleep(1500);
+                main_Page_Message.LoadingMainPageMessage();
+                
                 Console.Clear();
                 main_Page.MainPage();
             }
