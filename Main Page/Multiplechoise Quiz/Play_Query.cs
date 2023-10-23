@@ -37,6 +37,7 @@ public class Play_Query
 
                 dividingline.Border();
                 Thread.Sleep(1500);
+                Console.Clear();
                 main_Page_Message.LoadingMainPageMessage();
                 
                 Console.Clear();

@@ -7,6 +7,8 @@ public class Description_Of_Games
         Loading_Main_Page_Message main_Page_Message = new Loading_Main_Page_Message();
         Dividingline dividingline = new Dividingline();
         Navbar navbar = new Navbar();
+        Main_Page main_Page = new Main_Page();
+        Description_Of_Games description_Of_Games = new Description_Of_Games();
 
         List<string> DescriptionOfGames = new List<string>();
         
@@ -37,6 +39,7 @@ public class Description_Of_Games
                 dividingline.Border();
                 navbar.Navigation();
                 main_Page_Message.LoadingMainPageMessage();
+                main_Page.MainPage();
                 break;
 
             case "2":
@@ -47,6 +50,17 @@ public class Description_Of_Games
 
                 dividingline.Border();
                 navbar.Navigation();
+                main_Page.MainPage();
+                break;
+
+            default:
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Falsche Eingabe!");
+                Console.ResetColor();
+                Thread.Sleep(1000);
+                Console.Clear();
+
+                description_Of_Games.DescriptionOfGames();
                 break;
         }
     }

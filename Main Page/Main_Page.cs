@@ -7,6 +7,7 @@ public class Main_Page
         Creator_Information get_creator_information = new Creator_Information();
         Description_Of_Games get_description_of_games = new Description_Of_Games();
         Dividingline dividingline = new Dividingline();
+        Main_Page main_Page = new Main_Page();
 
         // Konsolen Ausgabe Anfang
         dividingline.Border();
@@ -43,6 +44,11 @@ public class Main_Page
 
                 case "3":
                     get_creator_information.CreatorInformation();
+                    break;
+
+                default:
+                    Console.Clear();
+                    main_Page.MainPage();
                     break;
 
             }

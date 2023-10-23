@@ -6,6 +6,9 @@ public class Questions_History
 {
     public void QuestionsHistory()
     {
+        Main_Page main_Page = new Main_Page();
+        Navbar navbar = new Navbar();
+        Loading_Main_Page_Message main_Page_Message = new Loading_Main_Page_Message();
         Error_Message error_Message = new Error_Message();
         Dividingline dividingline = new Dividingline();
 
@@ -45,14 +48,17 @@ public class Questions_History
         Random randomGenerator = new Random();
 
         questions = questions.OrderBy(frage => randomGenerator.Next()).ToList();
-        
-        // Eine zufällige Frage ausgeben
-        foreach (var question in questions)
-        {
-            dividingline.Border();
-            Console.WriteLine(question.Question);
 
-            foreach (var option in question.AwnserOptions)
+        int totalQuestions = questions.Count;
+
+        for (int i = 0; i < totalQuestions; i++)
+        {
+            int currentQuestionNumber = i + 1;
+
+            dividingline.Border();
+            Console.WriteLine($"Frage {currentQuestionNumber}/{totalQuestions}:\n\n{questions[i].Question}");
+
+            foreach (var option in questions[i].AwnserOptions)
             {
                 Console.WriteLine(option);
             }
@@ -61,7 +67,6 @@ public class Questions_History
             dividingline.Border();
             Console.WriteLine();
 
-            // Schauen ob die Frage richtig ist
             string? userAnswer = Console.ReadLine();
             Console.WriteLine();
 
@@ -69,7 +74,7 @@ public class Questions_History
             {
                 userAnswer = userAnswer.Trim().ToLower();
 
-                if (userAnswer == question.CorrectAwnser)
+                if (userAnswer == questions[i].CorrectAwnser)
                 {
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Deine Antwort ist Richtig, mach weiter so!\n");
@@ -79,7 +84,7 @@ public class Questions_History
                 }
                 else
                 {
-                    Console.ForegroundColor= ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Deine Antwort ist leider Falsch!\n");
                     Console.ResetColor();
                     Thread.Sleep(2000);
@@ -91,5 +96,9 @@ public class Questions_History
                 error_Message.ErrorMessage();
             }
         }
+
+        navbar.Navigation();
+        main_Page_Message.LoadingMainPageMessage();
+        main_Page.MainPage();
     }
 }

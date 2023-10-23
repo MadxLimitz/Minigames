@@ -8,4 +8,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Description of Games\" />
+    <None Remove="Design\" />
+    <None Remove="Messages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Description of Games\" />
+    <Folder Include="Design\" />
+    <Folder Include="Messages\" />
+  </ItemGroup>
 </Project>

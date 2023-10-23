@@ -6,6 +6,7 @@ public class Creator_Information
     {
         Navbar navbar = new Navbar();
         Loading_Main_Page_Message main_Page_Message = new Loading_Main_Page_Message();
+        Main_Page main_Page = new Main_Page();
         Dividingline dividingline = new Dividingline();
         Console.Clear();
 
@@ -28,6 +29,7 @@ public class Creator_Information
         dividingline.Border();
         navbar.Navigation();
         main_Page_Message.LoadingMainPageMessage();
+        main_Page.MainPage();
         // Konsolen Ausgabe Ende
     }
 }

@@ -8,6 +8,8 @@ public class Game_List
     {
         Multiplechoise_Quiz multiplechoise_Quiz = new Multiplechoise_Quiz();
         Dividingline dividingline = new Dividingline();
+        Game_List game_List = new Game_List();
+        Error_Message error_Message = new Error_Message();
 
         List<string> GameList = new List<string>();
 
@@ -31,7 +33,7 @@ public class Game_List
         switch (userInput)
         {
             case "1":
-                Multiplechoise_Quiz.MultiplechoiseQuiz();
+                multiplechoise_Quiz.MultiplechoiseQuiz();
                 break;
 
             case "2":
@@ -43,6 +45,15 @@ public class Game_List
                 dividingline.Border();
                 Thread.Sleep(1500);
                 Console.Clear();
+
+                game_List.GameList();
+                break;
+
+            default:
+                error_Message.ErrorMessage();
+                Thread.Sleep(1000);
+                Console.Clear();
+                game_List.GameList();
                 break;
         }
     }
