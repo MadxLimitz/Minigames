@@ -1,4 +1,5 @@
-﻿using MainPage;
+﻿using System;
+using MainPage;
 
 namespace MultiplechoiseQuiz;
 
@@ -50,6 +51,7 @@ public class Questions_History
         questions = questions.OrderBy(frage => randomGenerator.Next()).ToList();
 
         int totalQuestions = questions.Count;
+        int correctAnswers = 0;
 
         for (int i = 0; i < totalQuestions; i++)
         {
@@ -79,15 +81,16 @@ public class Questions_History
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Deine Antwort ist Richtig, mach weiter so!\n");
                     Console.ResetColor();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     Console.Clear();
+                    correctAnswers++;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Deine Antwort ist leider Falsch!\n");
                     Console.ResetColor();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     Console.Clear();
                 }
             }
@@ -97,6 +100,12 @@ public class Questions_History
             }
         }
 
+        Console.Clear();
+        dividingline.Border();
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine($"Du hast {correctAnswers} von {totalQuestions} Fragen richtig beantwortet.\n");
+        Console.ResetColor(); dividingline.Border();
+        Thread.Sleep(2500);
         navbar.Navigation();
         main_Page_Message.LoadingMainPageMessage();
         main_Page.MainPage();

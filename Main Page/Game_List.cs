@@ -1,4 +1,5 @@
 ﻿using MultiplechoiseQuiz;
+using GuessNumber;
 
 namespace MainPage;
 
@@ -6,15 +7,16 @@ public class Game_List
 {
     public void GameList()
     {
-        Multiplechoise_Quiz multiplechoise_Quiz = new Multiplechoise_Quiz();
+        Multiplechoise_Quiz_FirstPage multiplechoise_Quiz = new Multiplechoise_Quiz_FirstPage();
         Dividingline dividingline = new Dividingline();
         Game_List game_List = new Game_List();
         Error_Message error_Message = new Error_Message();
+        Guess_Number_FirstPage guess_Number_FirstPage = new Guess_Number_FirstPage();
 
         List<string> GameList = new List<string>();
 
         GameList.Add("1. Multiplechoise Quiz\n");
-        GameList.Add("2. In Arbeit...\n");
+        GameList.Add("2. Zahlen Raten\n");
 
 
         // Konsolen Ausgabe Anfang
@@ -37,16 +39,7 @@ public class Game_List
                 break;
 
             case "2":
-                Console.Clear();
-                dividingline.Border();
-
-                Console.WriteLine("Weitere spiele sind in Arbeit...\n");
-
-                dividingline.Border();
-                Thread.Sleep(1500);
-                Console.Clear();
-
-                game_List.GameList();
+                guess_Number_FirstPage.GuessNumberFirstPage();
                 break;
 
             default:

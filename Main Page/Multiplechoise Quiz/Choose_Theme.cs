@@ -10,13 +10,14 @@ public class Choose_Theme
         Questions_General_Knowledge questions_General_Knowledge = new Questions_General_Knowledge();
         Dividingline dividingline = new Dividingline();
         Navbar navbar = new Navbar();
+        Questions_Math questions_Math = new Questions_Math();
 
         List<string> ChooseTheme = new List<string>();
 
         ChooseTheme.Add("Thema wählen:\n");
         ChooseTheme.Add("1. Geschichte");
         ChooseTheme.Add("2. Allgemein Wissen");
-        ChooseTheme.Add("3. <none>\n");
+        ChooseTheme.Add("3. Mathematik\n");
 
         // Konsolen Ausgabe Anfang
         dividingline.Border();
@@ -44,13 +45,7 @@ public class Choose_Theme
 
             case "3":
                 Console.Clear();
-                // TODO - Weitere Fragen einfügen
-                dividingline.Border();
-
-                Console.WriteLine("Weitere Themen sind in Arbeit... \n");
-
-                dividingline.Border();
-                Thread.Sleep(1500);
+                questions_Math.QuestionsMath();
                 break;
         }
     }

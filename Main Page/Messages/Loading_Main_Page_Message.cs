@@ -15,7 +15,7 @@ public class Loading_Main_Page_Message
         Console.ResetColor();
 
         dividingline.Border();
-        Thread.Sleep(1500);
+        Thread.Sleep(500);
         Console.Clear();
     }
 }

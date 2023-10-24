@@ -13,7 +13,7 @@ public class Description_Of_Games
         List<string> DescriptionOfGames = new List<string>();
         
         DescriptionOfGames.Add("1. Multiplechoise Quiz\n");
-        DescriptionOfGames.Add("2. In Arbeit...\n");
+        DescriptionOfGames.Add("2. Zahlen Raten\n");
 
         // Konsolen Ausgabe Anfang
         dividingline.Border();
@@ -46,10 +46,11 @@ public class Description_Of_Games
                 Console.Clear();
                 dividingline.Border();
 
-                Console.WriteLine("Weitere Spiel sind in Arbeit...\n");
+                Console.WriteLine("Beim Spiel \"Zahlen Raten\" generiert der Computer eine zufällige Zahl die du erraten musst, \nje nach deiner letzten eingegebenen Zahl wird dir angezeigt ob du über oder unter der gesuchten Zahl bist.\n");
 
                 dividingline.Border();
                 navbar.Navigation();
+                main_Page_Message.LoadingMainPageMessage();
                 main_Page.MainPage();
                 break;
 
